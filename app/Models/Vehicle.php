@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 /**
  * App\Models\Vehicle
@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
  * @method static \Illuminate\Database\Eloquent\Builder|Vehicle newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Vehicle newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Vehicle query()
+ *
  * @mixin \Eloquent
  */
 class Vehicle extends Model
