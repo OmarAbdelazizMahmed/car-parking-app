@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Zone extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory, GeneratesUuid;
 
     protected $fillable = [
         'name',

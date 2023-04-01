@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Traits\ManagePasswords;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Dyrynda\Database\Support\GeneratesUuid;
 
 /**
  * App\Models\User
@@ -26,7 +26,7 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, ManagePasswords, HasUuids;
+    use HasApiTokens, HasFactory, Notifiable, ManagePasswords, GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
