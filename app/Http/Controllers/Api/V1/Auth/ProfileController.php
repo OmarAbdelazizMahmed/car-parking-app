@@ -3,12 +3,21 @@
 namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\V1\Profile\UpdateProfileRequest;
+use App\Http\Resources\UserResource;
 
 class ProfileController extends Controller
 {
-    public function show(Request $request)
+    public function show()
     {
-        return $request->user();
+        return UserResource::make(auth()->user());
+    }
+
+    public function update(UpdateProfileRequest $request)
+    {
+        $user = auth()->user();
+        $user->update($request->validated());
+
+        return UserResource::make($user);
     }
 }

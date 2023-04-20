@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Dyrynda\Database\Support\GeneratesUuid;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +24,11 @@ class Vehicle extends Model
         'user_id',
         'plate_number',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
 
     public function user()
     {

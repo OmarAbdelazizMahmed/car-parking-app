@@ -13,7 +13,6 @@ class LoginController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -25,7 +24,7 @@ class LoginController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-        if (! $user || ! $user->hasVerifiedEmail() || ! $user->hasPassword($request->password)) {
+        if (! $user || ! $user->email_verified_at || ! $user->hasPassword($request->password)) {
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials are incorrect.'],
             ]);
