@@ -19,6 +19,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
+        ds('index');
         return VehicleResource::collection(Vehicle::all());
     }
 
